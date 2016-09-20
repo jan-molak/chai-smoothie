@@ -1,0 +1,24 @@
+# IntelliJ
+.idea
+*.iml
+
+# Node
+node_modules
+npm-debug.log
+.npmignore
+
+# Build process
+staging
+gulpfile.config.js
+gulpfile.js
+mocha.opts
+typings
+!typings.json
+protractor.conf.js
+
+# Pre-transpiled sources
+spec
+src
+
+# Config files
+*.json

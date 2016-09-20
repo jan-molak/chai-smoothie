@@ -1,0 +1,38 @@
+{
+  "extends": "tslint:latest",
+  "rules": {
+    "no-console": [false],
+    "quotemark": [true, "single", "avoid-escape"],
+    "one-variable-per-declaration": false,
+    "member-access": false,
+    "typedef-whitespace":
+    [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      },
+      {
+        "call-signature": "onespace",
+        "index-signature": "onespace",
+        "parameter": "onespace",
+        "property-declaration": "space",
+        "variable-declaration": "space"
+      }
+    ],
+    "object-literal-sort-keys": false,
+    "no-bitwise": false,
+    "one-line": false,
+    "variable-name": [true, "ban-keywords"],
+    "interface-name": [true, "never-prefix"],
+    "max-line-length": [true, 160],
+    "member-ordering": [true,
+      "public-before-private",
+      "static-before-instance",
+      "variables-before-functions"
+    ]
+  }
+}
