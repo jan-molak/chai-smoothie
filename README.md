@@ -137,7 +137,7 @@ To ask about the usage and troubleshooting of Serenity/JS or any of its componen
 
 ## Your feedback matters!
 
-Do you find Chai Smoothie useful? Give it a star! &#9733;
+Do you find Chai Smoothie useful? [Give it a star](https://github.com/jan-molak/chai-smoothie)! &#9733;
 
 Found a bug? Need a feature? Raise [an issue](https://github.com/jan-molak/chai-smoothie/issues?state=open)
 or submit a pull request.

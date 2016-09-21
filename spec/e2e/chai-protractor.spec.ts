@@ -68,7 +68,6 @@ describe('Chai-Protractor', () => {
         describe('that is off-screen', () => {
 
             it('is displayed',      () => expect(element(by.id('off-screen'))).to.eventually.be.displayed);
-            it('is xxx',      () => expect(element(by.id('off-screen'))).not.to.be.present.eventually);
 
             it('is present',        () => expect(element(by.id('off-screen'))).to.eventually.be.present);
 

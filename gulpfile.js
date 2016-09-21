@@ -24,7 +24,7 @@ gulp.task("lint", () =>
         .pipe(tslint.report())
 );
 
-gulp.task('transpile', () => {
+gulp.task('transpile', [ 'lint' ], () => {
     let transpiled = gulp.src([ dirs.src, dirs.spec, dirs.typings ])
         .pipe(sourcemaps.init())
         .pipe(ts(project, { sortOutput: true, typescript: require('typescript') }));
