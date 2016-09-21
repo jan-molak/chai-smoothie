@@ -1,5 +1,11 @@
 # Chai Smoothie - Protractor assertions for Chai
 
+[![Build Status](https://travis-ci.org/jan-molak/chai-smoothie.svg?branch=master)](https://travis-ci.org/jan-molak/chai-smoothie)
+[![Coverage Status](https://coveralls.io/repos/github/jan-molak/chai-smoothie/badge.svg)](https://coveralls.io/github/jan-molak/chai-smoothie)
+[![Dependencies](https://david-dm.org/jan-molak/chai-smoothie.svg)](https://david-dm.org/jan-molak/chai-smoothie)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
+
 [Chai Smoothie](https://github.com/jan-molak/chai-smoothie) smooths out the sharp angles of your
 [Protractor](https://github.com/angular/protractor)-powered automated web tests.
 
