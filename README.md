@@ -1,5 +1,6 @@
 # Chai Smoothie - Protractor assertions for Chai
 
+[![npm version](https://badge.fury.io/js/chai-smoothie.svg)](https://badge.fury.io/js/chai-smoothie)
 [![Build Status](https://travis-ci.org/jan-molak/chai-smoothie.svg?branch=master)](https://travis-ci.org/jan-molak/chai-smoothie)
 [![Coverage Status](https://coveralls.io/repos/github/jan-molak/chai-smoothie/badge.svg)](https://coveralls.io/github/jan-molak/chai-smoothie)
 [![Dependencies](https://david-dm.org/jan-molak/chai-smoothie.svg)](https://david-dm.org/jan-molak/chai-smoothie)
