@@ -83,7 +83,7 @@ you can use similar syntax with
 [Serenity/JS Questions](https://github.com/jan-molak/serenity-js/blob/master/docs/screenplay-pattern.md#question):
 
 ```typescript
-expect(actor.toSee(Article.Title)).displayed
+expect(actor.toSee(WebElement.of(Article.Title))).displayed
 ```
 
 Using the Open-Source Serenity/JS library has a whole lot of other benefits too - [learn more](https://github.com/jan-molak/serenity-js).
