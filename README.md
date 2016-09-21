@@ -70,7 +70,7 @@ into something a bit more readable:
 expect(element(by.id('title'))).to.eventually.be.displayed
 ```
 
-Should the above assertion fail, the error message we'll see will present more context:
+Should the above assertion fail, the error message will be much more informative:
 
 ```
 AssertionError: Expected the element located By(css selector, *[id="title"]) to be displayed, but it's not.
@@ -86,17 +86,17 @@ you can use similar syntax with
 expect(actor.toSee(Article.Title)).displayed
 ```
 
-Using the open-source Serenity/JS library has other benefits too - [learn more](https://github.com/jan-molak/serenity-js).
+Using the Open-Source Serenity/JS library has a whole lot of other benefits too - [learn more](https://github.com/jan-molak/serenity-js).
 
 ## Setting up
 
-Install [Chai](http://chaijs.com/):
+First of all, install [Chai](http://chaijs.com/) if you don't already have it in your project:
 
 ```
 npm install chai --save-dev
 ```
 
-Install Chai Smoothie:
+Next, install Chai Smoothie:
 
 ```
 npm install chai-smoothie --save-dev
