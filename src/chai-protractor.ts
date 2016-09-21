@@ -34,26 +34,28 @@ function protractorChai(chai: any, utils: any) {
         let methodNameFrom = (propertyName: string) => `is${propertyName.charAt(0).toUpperCase()}${propertyName.slice(1)}`,
             method         = methodNameFrom(property);
 
-        chai.Assertion.addProperty(property, function () {                      // tslint:disable-line:only-arrow-functions
+        chai.Assertion.addProperty(property, function () {                  // tslint:disable-line:only-arrow-functions
             let assertion: ElementFinderAssertion = ensureAssertingOn(ElementFinder, this);
 
-            assertion._obj[ method ]().then((state: boolean) => {
-                this.assert(state,
-                    `Expected the element located ${assertion._obj.locator()} to be ${property}, but it's not`,
-                    `Expected the element located ${assertion._obj.locator()} not to be ${property}, yet it is`
-                );
-            });
+            return assertion._obj[ method ]().then((state: boolean) => this.assert(state,
+                `Expected the element located ${ assertion._obj.locator() } to be ${ property }, but it's not.`,
+                `Expected the element located ${ assertion._obj.locator() } not to be ${ property }, yet it is.`
+            ));
         });
     }
 
-    function supportChaiAsPromisedStyle() {
-        chai.Assertion.overwriteProperty('eventually', (_super) => {
-            return function () {                                                // tslint:disable-line:only-arrow-functions
-                let obj = this._obj;
+    function supportChaiAsPromised() {
+        function isOfInterest(obj: any): boolean {
+            return !! obj && obj instanceof ElementFinder && ! obj.then;
+        }
 
-                if (obj && obj instanceof ElementFinder) {
-                    let protractorAssertion = new chai.Assertion(obj);             // tslint:disable-line
-                    utils.transferFlags(this, protractorAssertion, false);      // false means don't transfer `object` flag
+        chai.Assertion.overwriteProperty('eventually', (_super) => {
+            return function () {                                            // tslint:disable-line:only-arrow-functions
+                let subject = this._obj;
+
+                if (isOfInterest(subject)) {
+                    let protractorAssertion = new chai.Assertion(subject);  // tslint:disable-line
+                    utils.transferFlags(this, protractorAssertion, false);  // false means don't transfer `object` flag
                 } else {
                     _super.call(this);
                 }
@@ -66,7 +68,7 @@ function protractorChai(chai: any, utils: any) {
     addBooleanProperty('enabled');
     addBooleanProperty('selected');
 
-    supportChaiAsPromisedStyle();
+    supportChaiAsPromised();
 }
 
 export = protractorChai;

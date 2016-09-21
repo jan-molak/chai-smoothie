@@ -68,6 +68,7 @@ describe('Chai-Protractor', () => {
         describe('that is off-screen', () => {
 
             it('is displayed',      () => expect(element(by.id('off-screen'))).to.eventually.be.displayed);
+            it('is xxx',      () => expect(element(by.id('off-screen'))).not.to.be.present.eventually);
 
             it('is present',        () => expect(element(by.id('off-screen'))).to.eventually.be.present);
 
@@ -78,9 +79,33 @@ describe('Chai-Protractor', () => {
     });
 
     describe('plays well with others:', () => {
+
         it('works with chai-as-promised', () => expect(browser.getTitle()).to.eventually.equal('A sample HTML page'));
 
+        it('does not affect the protractor assertions', () => expect(element(by.css('h1')).getText()).to.eventually.equal('A demo page'));
+
         it('does not affect the transferable flags', () => expect(browser.getTitle()).to.eventually.not.equal('Amazon.com'));
+
+        it('returns a promise', () => {
+
+            let result = expect(element(by.css('h1')).getText()).to.eventually.equal('A demo page');
+
+            return expect(result).to.have.property('then');
+        });
+
+        it('returns a promise when used without chai-as-promised', () => {
+
+            let result = expect(element(by.css('h1'))).to.be.displayed;
+
+            return expect(result).to.have.property('then');
+        });
+
+        it('returns a promise when used with chai-as-promised', () => {
+
+            let result = expect(element(by.css('h1'))).to.eventually.be.displayed;
+
+            return expect(result).to.have.property('then');
+        });
     });
 
     describe('complains when it', () => {
