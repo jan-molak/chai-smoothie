@@ -25,6 +25,7 @@
     ],
     "object-literal-sort-keys": false,
     "no-bitwise": false,
+    "no-namespace": [true, "allow-declarations"],
     "one-line": false,
     "variable-name": [true, "ban-keywords"],
     "interface-name": [true, "never-prefix"],

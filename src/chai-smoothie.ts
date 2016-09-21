@@ -3,13 +3,14 @@ import { ElementFinder } from 'protractor';
 type ChaiAssertion<T> = { _obj: T };
 type ElementFinderAssertion = ChaiAssertion<ElementFinder>;
 
-// tslint:disable-next-line:no-namespace
-export namespace Chai {
-    export interface Assertion {
-        displayed: Assertion;
-        present: Assertion;
-        enabled: Assertion;
-        selected: Assertion;
+declare global {
+    namespace Chai {                // tslint:disable-line:no-namespace
+        interface Assertion {
+            displayed: Assertion;
+            present: Assertion;
+            enabled: Assertion;
+            selected: Assertion;
+        }
     }
 }
 
