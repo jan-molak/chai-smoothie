@@ -42,11 +42,12 @@
     "url": "https://github.com/jan-molak/chai-smoothie/issues"
   },
   "homepage": "https://github.com/jan-molak/chai-smoothie#readme",
-  "dependencies": {
-    "chai": "^3.0.0",
-    "protractor": "^4.0.4"
+  "peerDependencies": {
+    "chai": ">= 3.0.0 < 4",
+    "protractor": ">= 4.0.4 < 5"
   },
   "devDependencies": {
+    "chai": "^3.0.0",
     "chai-as-promised": "5.3.0",
     "commitizen": "2.8.6",
     "coveralls": "2.11.14",
@@ -63,6 +64,7 @@
     "merge2": "1.0.2",
     "mocha": "3.0.2",
     "phantomjs-prebuilt": "2.1.12",
+    "protractor": "^4.0.4",
     "remap-istanbul": "0.6.4",
     "run-sequence": "1.2.2",
     "semantic-release": "^4.3.5",
