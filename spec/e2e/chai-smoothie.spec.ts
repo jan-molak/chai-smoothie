@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor/globals';
+import { browser, by, element } from 'protractor';
 
 import chai = require('chai');
 
