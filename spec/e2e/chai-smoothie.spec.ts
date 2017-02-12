@@ -105,6 +105,10 @@ describe('Chai-Protractor', () => {
 
             return expect(result).to.have.property('then');
         });
+
+        it('works even if it is given the text of the element, not the element itself', () =>
+            expect(element(by.css('h1')).getText()).to.eventually.be.displayed
+        );
     });
 
     describe('complains when it', () => {

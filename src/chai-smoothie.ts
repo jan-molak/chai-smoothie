@@ -38,9 +38,11 @@ function protractorChai(chai: any, utils: any) {
         chai.Assertion.addProperty(property, function () {                  // tslint:disable-line:only-arrow-functions
             let assertion: ElementFinderAssertion = ensureAssertingOn(ElementFinder, this);
 
+            let locator = assertion._obj.locator();
+
             return assertion._obj[ method ]().then((state: boolean) => this.assert(state,
-                `Expected the element located ${ assertion._obj.locator() } to be ${ property }, but it's not.`,
-                `Expected the element located ${ assertion._obj.locator() } not to be ${ property }, yet it is.`
+                `Expected the element located ${ locator } to be ${ property }, but it's not.`,
+                `Expected the element located ${ locator } not to be ${ property }, yet it is.`
             ));
         });
     }

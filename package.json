@@ -26,6 +26,7 @@
   },
   "keywords": [
     "serenity",
+    "serenity-js",
     "protractor",
     "chai",
     "assertions",
