@@ -136,6 +136,7 @@ to highlight that the Chai Smoothie assertions return promises: `return expect(e
 | enabled   | `expect(el).to.be.enabled`   | A form control element, such as an `input`, is [not disabled](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-disabled)  | [`isEnabled()`](http://www.protractortest.org/#/api?view=webdriver.WebElement.prototype.isEnabled) |
 | present   | `expect(el).to.be.present`   | An element exists in the DOM, but can be hidden  | [`isPresent()`](http://www.protractortest.org/#/api?view=webdriver.WebElement.prototype.isPresent) |
 | selected  | `expect(el).to.be.selected`  | A form control, such as an `input` `checkbox` is [checked](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-checked) | [`isSelected()`](http://www.protractortest.org/#/api?view=webdriver.WebElement.prototype.isSelected) |
+| text() | `expect(el).to.have.text('some text')` or `expect(el).to.contain.text('some text')`| An element have / contains a given text | [`getText()`](http://www.protractortest.org/#/api?view=webdriver.WebElement.prototype.getText) |
 
 ## Getting Help
 

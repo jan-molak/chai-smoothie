@@ -75,6 +75,17 @@ describe('Chai-Protractor', () => {
 
             it('is clickable',      () => element(by.id('off-screen')).click());
         });
+
+        describe('that have some text', () => {
+
+            it('have correct text',                () => expect(element(by.id('text-container'))).to.have.text('correct text'));
+
+            it('does not have incorrect text',     () => expect(element(by.id('text-container'))).to.not.have.text('incorrect text'));
+
+            it('contains correct part',             () => expect(element(by.id('text-container'))).to.contain.text('correct'));
+
+            it('does not contain incorrect part',  () => expect(element(by.id('text-container'))).to.not.contain.text('incorrect'));
+        });
     });
 
     describe('plays well with others:', () => {

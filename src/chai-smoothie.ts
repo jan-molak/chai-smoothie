@@ -10,6 +10,7 @@ declare global {
             present: Assertion;
             enabled: Assertion;
             selected: Assertion;
+            text(text: string): Assertion;
         }
     }
 }
@@ -72,6 +73,24 @@ function protractorChai(chai: any, utils: any) {
     addBooleanProperty('selected');
 
     supportChaiAsPromised();
+
+    chai.Assertion.addMethod('text', function (expected: string) {            // tslint:disable-line:only-arrow-functions
+        let assertion: ElementFinderAssertion = ensureAssertingOn(ElementFinder, this);
+
+        let locator = assertion._obj.locator();
+
+        if (utils.flag(this, 'contains')) {
+            return assertion._obj.getText().then(text => this.assert(text.trim().includes(expected),
+                `Expected the element located ${ locator } with text '${ text }' to contain '${ expected }'.`,
+                `Expected the element located ${ locator } with text '${ text }' to not contain '${ expected }'.`
+            ));
+        } else {
+            return assertion._obj.getText().then(text => this.assert(text.trim() === expected,
+                `Expected the element located ${ locator } with text '${ text }' to have '${ expected }'.`,
+                `Expected the element located ${ locator } with text '${ text }' to not have '${ expected }'.`
+            ));
+        }
+    });
 }
 
 export = protractorChai;
