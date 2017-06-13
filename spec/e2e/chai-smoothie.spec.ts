@@ -2,8 +2,11 @@ import { browser, by, element } from 'protractor';
 
 import chai = require('chai');
 
-chai.use(require('chai-as-promised'));          // tslint:disable-line:no-var-requires
-chai.use(require('../../src/chai-smoothie'));   // tslint:disable-line:no-var-requires
+import chaiAsPromised = require('chai-as-promised');
+import chaiSmoothie = require('../../src/chai-smoothie');
+
+chai.use(chaiAsPromised);
+chai.use(chaiSmoothie);
 
 const expect = chai.expect;
 
