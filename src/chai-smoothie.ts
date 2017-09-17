@@ -12,6 +12,14 @@ declare global {
             selected: Assertion;
             text(text: string): Assertion;
         }
+
+        interface PromisedAssertion {
+            displayed: PromisedAssertion;
+            present: PromisedAssertion;
+            enabled: PromisedAssertion;
+            selected: PromisedAssertion;
+            text(text: string): PromisedAssertion;
+        }
     }
 }
 
