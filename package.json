@@ -37,7 +37,14 @@
     "test",
     "testing"
   ],
-  "author": "Jan Molak <jan.molak@smartcodeltd.co.uk>",
+  "author": {
+    "name": "Jan Molak",
+    "email": "jan.molak@smartcodeltd.co.uk",
+    "url": "https://janmolak.com"
+  },
+  "funding": {
+    "url": "https://github.com/sponsors/jan-molak"
+  },
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/jan-molak/chai-smoothie/issues"
